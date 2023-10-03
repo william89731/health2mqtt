@@ -25,11 +25,27 @@ system monitor and push to mqtt.
 
 ![image](https://github.com/william89731/health2mqtt/assets/68069659/b8aaee3f-8bcd-4470-a91a-b429820ec3e2)
 
+[compose file](https://github.com/william89731/health2mqtt/blob/main/docker-compose.yml), enjoy :)
+
 
 ##### kubernetes environment
 
 
 ![image](https://github.com/william89731/health2mqtt/assets/68069659/c1aeba4d-5819-4c5f-9532-ac7ec413351e)
+
+
+
+[here](https://github.com/william89731/health2mqtt/blob/main/h2mqtt.yml) manifest k8s. for 3 machine (bareMetal). one isnstance per node
+
+
+##### dashboard and notification
+
+
+![image](https://github.com/william89731/health2mqtt/assets/68069659/25901663-19cd-4cdb-bd36-7ee55f3871fe)
+
+
+use topics and payloads mqtt for any situations (beatiful dashboard grafana,telegram...)
+
 
 
 
