@@ -1,0 +1,20 @@
+services:
+###############
+#  health2mqtt   #
+###############
+  health2mqtt:
+    container_name: health2mqtt
+    image: william1608/health2mqtt:1.2
+    volumes:
+    - /tmp/cpu:/tmp/cpu
+    - /tmp/ram:/tmp/ram
+    - /tmp/disc:/tmp/disc
+    - /tmp/temp:/tmp/temp
+    environment:
+      TZ: Europe/Rome
+      HOSTNAME: 'HOST NAME'
+      MQTT_SERVER: '192.168.1.1'
+      USERNAME: 'USER'
+      PASSWORD: 'PASS'
+      PORT: '1883'
+    restart: always  

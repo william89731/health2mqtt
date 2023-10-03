@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: health2mqtt
+  name: health2mqtt
+  namespace: monitoring
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: health2mqtt
+  template:
+    metadata:
+      labels:
+        app: health2mqtt
+    spec:
+      topologySpreadConstraints:
+            - maxSkew: 1
+              topologyKey: kubernetes.io/hostname
+              whenUnsatisfiable: DoNotSchedule
+              labelSelector:
+                matchLabels:
+                   app: health2mqtt
+      initContainers:
+        - name: init-broker
+          image: busybox:1.36
+          imagePullPolicy: IfNotPresent
+          command: ["sh", "-c", "until nc -z 192.168.1.1 1883 > /dev/null; do echo Waiting for broker.; sleep 2; done;"]             
+      containers:
+        - env:
+            - name: HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: MQTT_SERVER
+              value: "192.168.1.1"
+            - name: USERNAME
+              value: "USER"  
+            - name: PASSWORD
+              value: "PASS"
+            - name: PORT
+              value: "1883"
+            - name: TZ
+              value: "Europe/Rome"  
+          image: william1608/health2mqtt:1.2
+          imagePullPolicy: IfNotPresent
+          name: health2mqtt
+          volumeMounts:
+            - mountPath: /tmp/cpu
+              name: cpu
+            - mountPath: /tmp/ram
+              name: ram
+            - mountPath: /tmp/disc
+              name: disc
+            - mountPath: /tmp/temp   # or comment in case vm
+              name: temp 
+      restartPolicy: Always
+      volumes:
+        - name: cpu
+          hostPath:
+            path: /tmp/cpu
+        - name: ram
+          hostPath:
+            path: /tmp/ram
+        - name: disc
+          hostPath:
+            path: /tmp/disc  
+        - name: temp   # or comment in case vm
+          hostPath:
+            path: /tmp/temp        
