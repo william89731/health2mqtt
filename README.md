@@ -1,4 +1,5 @@
-![monitor](https://github.com/william89731/health2mqtt/assets/68069659/0336580e-7975-4244-9138-863107d840d1)
+![monitor](https://github.com/william89731/health2mqtt/assets/68069659/15166c9b-ce95-477c-ac82-64b838055896)
+
 
 [![platform](https://img.shields.io/badge/platform-kubernetes-blue)](https://kubernetes.io/)
 [![os](https://img.shields.io/badge/os-linux-red)](https://www.linux.org/)
@@ -22,8 +23,10 @@ system monitor and push to mqtt.
 
 ##### Docker environment
 
+![Screenshot from 2023-10-03 17-49-57](https://github.com/william89731/health2mqtt/assets/68069659/ccfbc809-940f-48bd-b66c-98bc06dd9edd)
 
-![image](https://github.com/william89731/health2mqtt/assets/68069659/b8aaee3f-8bcd-4470-a91a-b429820ec3e2)
+
+
 
 [compose file](https://github.com/william89731/health2mqtt/blob/main/docker-compose.yml), enjoy :)
 
@@ -31,7 +34,8 @@ system monitor and push to mqtt.
 ##### kubernetes environment
 
 
-![image](https://github.com/william89731/health2mqtt/assets/68069659/c1aeba4d-5819-4c5f-9532-ac7ec413351e)
+![Screenshot from 2023-10-03 17-53-28](https://github.com/william89731/health2mqtt/assets/68069659/634d96a6-8a89-4d9c-9360-ceefbd3d99e8)
+
 
 
 
@@ -41,7 +45,8 @@ system monitor and push to mqtt.
 ##### dashboard and notification
 
 
-![image](https://github.com/william89731/health2mqtt/assets/68069659/25901663-19cd-4cdb-bd36-7ee55f3871fe)
+![Screenshot from 2023-10-03 18-06-37](https://github.com/william89731/health2mqtt/assets/68069659/863301b5-6364-4995-b448-0aeeca23c661)
+
 
 
 use topics and payloads mqtt for any situations (beatiful dashboard grafana,telegram...)
