@@ -14,7 +14,7 @@ system monitor and push to mqtt.
 ```requirements:```
 - [os linux](https://www.linux.org/pages/download/)
 - [lm_sensors](https://wiki.archlinux.org/title/Lm_sensors)  (opzional)
-- copy this [script]() and put it on crontab
+- copy this [script](https://github.com/william89731/health2mqtt/blob/main/health.sh) and put it on crontab
 
 ```bash
 */1 * * * * bash ~/health.sh
@@ -22,6 +22,15 @@ system monitor and push to mqtt.
 
 ##### Docker environment
 
+
+![image](https://github.com/william89731/health2mqtt/assets/68069659/b8aaee3f-8bcd-4470-a91a-b429820ec3e2)
+
+
 ##### kubernetes environment
+
+
+![image](https://github.com/william89731/health2mqtt/assets/68069659/c1aeba4d-5819-4c5f-9532-ac7ec413351e)
+
+
 
 
