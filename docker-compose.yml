@@ -4,7 +4,7 @@ services:
 ###############
   health2mqtt:
     container_name: health2mqtt
-    image: william1608/health2mqtt:1.2
+    image: william1608/health2mqtt:$VERSION
     volumes:
     - /tmp/cpu:/tmp/cpu
     - /tmp/ram:/tmp/ram
